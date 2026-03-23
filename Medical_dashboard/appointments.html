@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/appointments.css" />
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <aside class="sidebar"></aside>
+      <main class="main-content">
+        <div class="main-inner">
+          <div class="page-header">
+            <h1 class="page-title">My Appointments</h1>
+          </div>
+          <div class="appointments-filter">
+            <div class="search-box-filter">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="The Appointments"
+              />
+            </div>
+            <div class="filter-actions">
+              <a href="#" class="appointments-link">All My Appointments</a>
+              <div class="month-selector">
+                <button class="month-nav-btn" id="prevMonth">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <span class="month-text" id="monthText">This Month</span>
+                <button class="month-nav-btn" id="nextMonth">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="appointmentsList">
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./js/appointments.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/sidebar.js"></script>
+  </body>
+</html>

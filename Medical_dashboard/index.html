@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedDaz - Medical Dashboard</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header></header>
+    <div class="container">
+      <aside class="sidebar"></aside>
+      <main class="main-content">
+        <div class="main-inner">
+          <h1 class="page-title">Dashboard</h1>
+          <div class="dashboard-grid">
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Previous Appointment</h2>
+                  <div class="card-controls">
+                    <select class="card-select">
+                      <option>Month</option>
+                      <option>Week</option>
+                      <option>Year</option>
+                    </select>
+                    <button class="card-menu-btn">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="chart-container">
+                  <canvas id="appointmentChart"></canvas>
+                </div>
+              </div>
+              <div class="card" style="margin-top: 24px">
+                <div class="card-header">
+                  <h2 class="card-title">Medical Test Result</h2>
+                  <a class="see-all-link">See All</a>
+                </div>
+                <div>
+                  <div class="test-result-item active">
+                    <div class="avatar-circle">JH</div>
+                    <div class="test-info">
+                      <div class="doctor-name">Dr. Johnny Hutaborart</div>
+                      <div class="doctor-specialty">Cardiology</div>
+                    </div>
+                    <div class="test-type">
+                      <i class="fas fa-file"></i>
+                      <span>Electrocardiogram Test</span>
+                    </div>
+                    <button class="view-details">View Details</button>
+                  </div>
+                  <div class="test-result-item">
+                    <div class="avatar-circle">SS</div>
+                    <div class="test-info">
+                      <div class="doctor-name">Dr. Sarah Simatupang</div>
+                      <div class="doctor-specialty">Urinology</div>
+                    </div>
+                    <div class="test-type">
+                      <i class="fas fa-file"></i>
+                      <span>Electrocardiogram Test</span>
+                    </div>
+                    <button class="view-details">View Details</button>
+                  </div>
+                  <div class="test-date">Feb 5, 2021</div>
+                </div>
+              </div>
+            </div>
+            <div class="appointment-sidebar">
+              <h2 class="appointment-title">Next Appointment</h2>
+              <div class="appointment-item">
+                <div class="appointment-date">Feb 14, 2021</div>
+                <div class="appointment-doctor">
+                  <div class="doctor-avatar">JH</div>
+                  <div class="doctor-details">
+                    <div class="doctor-name-small">Dr. Johnny Hutaborart</div>
+                    <div class="doctor-spec">Cardiology</div>
+                  </div>
+                </div>
+              </div>
+              <div class="appointment-item">
+                <div class="appointment-date">Feb 16, 2021</div>
+                <div class="appointment-doctor">
+                  <div class="doctor-avatar">SS</div>
+                  <div class="doctor-details">
+                    <div class="doctor-name-small">Dr. Sarah Simatupang</div>
+                    <div class="doctor-spec">Urinology</div>
+                  </div>
+                </div>
+              </div>
+              <button class="see-more-btn">See more</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/chart.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/sidebar.js"></script>
+  </body>
+</html>

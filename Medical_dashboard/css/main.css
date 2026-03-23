@@ -1,0 +1,419 @@
+@import url("./navbar.css");
+@import url("./sidebar.css");
+@import url("./scrollbar.css");
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+      overflow: auto;
+      height: 100%;
+      }
+
+      body {
+        font-family: "Mulish", sans-serif;
+      }
+
+      .container {
+        display: flex;
+        height: calc(100vh - 64px);
+        overflow: hidden;
+      }
+
+      .main-content {
+        flex: 1;
+        overflow-y: auto;
+        background: #f7f7fc;
+        padding: 32px;
+      }
+
+      .main-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .page-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #11142D;
+        margin-bottom: 32px;
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 32px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        padding: 24px;
+        border: 1px solid #e8e8e8;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+      }
+
+      .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #11142D;
+      }
+
+      .card-controls {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .card-select {
+        padding: 8px 16px;
+        border: 2px solid #5541D7;
+        border-radius: 8px;
+        font-size: 16px;
+        background: white;
+        cursor: pointer;
+        outline: none;
+        color: #5541D7;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        width: 150px;
+      }
+      select,
+      ::picker(select) {
+        appearance: base-select;
+      }
+
+      select::picker-icon {
+        content: '\f078';
+        font-weight: 900;
+        font-family: 'Font Awesome 7 Free';
+        font-size: 22px;
+        margin: 0;
+      }
+
+      .card-menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #9A9AB0;
+        padding: 8px;
+        transition: color 0.2s;
+        rotate: 90deg;
+      }
+
+      .card-menu-btn:hover {
+        color: hsl(240, 12%, 45%);
+      }
+
+      .chart-container {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 16px;
+        position: relative;
+      }
+
+      #appointmentChart {
+        max-width: 100%;
+      }
+
+      .test-result-item {
+        border-radius: 8px;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-bottom: 16px;
+      }
+
+      .test-result-item.active {
+        background: #5541D7;
+        color: white;
+      }
+
+      .test-result-item:not(.active) {
+        border: 1px solid #e8e8e8;
+        background: white;
+      }
+
+      .test-result-item:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .avatar-circle {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+
+      .test-result-item.active .avatar-circle {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      .test-result-item:not(.active) .avatar-circle {
+        background: #f0f0f0;
+        color: #11142D;
+      }
+
+      .test-info {
+        flex: 1;
+      }
+
+      .doctor-name {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+
+      .doctor-specialty {
+        font-size: 13px;
+        opacity: 0.7;
+      }
+
+      .test-result-item.active .doctor-specialty {
+        color: #E1E1E1;
+      }
+
+      .test-type {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .test-type i {
+        font-size: 16px;
+      }
+
+      .view-details {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+        transition: opacity 0.2s;
+        white-space: nowrap;
+        margin-left: 16px;
+      }
+
+      .test-result-item.active .view-details {
+        color: white;
+      }
+
+      .test-result-item:not(.active) .view-details {
+        color: #5541D7;
+      }
+
+      .view-details:hover {
+        opacity: 0.8;
+      }
+
+      .test-date {
+        font-size: 12px;
+        text-align: right;
+        color: #999;
+        padding-top: 8px;
+        border-top: 1px solid #e8e8e8;
+      }
+
+      .test-result-item.active ~ .test-date {
+        border-top-color: #E1E1E1;
+        color: #11142D;
+      }
+
+      .appointment-sidebar {
+        background: white;
+        border-radius: 8px;
+        padding: 24px;
+        border: 1px solid #E1E1E1;
+        height: fit-content;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      .appointment-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #11142D;
+        margin-bottom: 24px;
+      }
+
+      .appointment-item {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #E1E1FB;
+      }
+
+      .appointment-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .appointment-date {
+        font-size: 12px;
+        color: #11142D;
+        margin-bottom: 12px;
+      }
+
+      .appointment-doctor {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .doctor-avatar {
+        width: 40px;
+        height: 40px;
+        background: #E2E2EA;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: #333;
+        flex-shrink: 0;
+      }
+
+      .doctor-details {
+        flex: 1;
+      }
+
+      .doctor-name-small {
+        font-weight: bold;
+        font-size: 14px;
+        color: #11142D;
+      }
+
+      .doctor-spec {
+        font-size: 12px;
+        color: #92929D;
+      }
+
+      .see-more-btn {
+        width: 100%;
+        padding: 8px;
+        background: none;
+        border: none;
+        color: #5541D7;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        text-decoration: underline;
+        margin-top: 12px;
+      }
+
+      .see-more-btn:hover {
+        opacity: 0.8;
+      }
+
+      .see-all-link {
+        color: #5541D7;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .see-all-link:hover {
+        text-decoration: underline;
+      }
+
+
+
+      /* responsive */
+      @media (max-width: 1024px) {
+        .dashboard-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .appointment-sidebar {
+          grid-column: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+
+        .main-content {
+          padding: 16px;
+        }
+
+        .page-title {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+
+        .card {
+          padding: 16px;
+        }
+
+        .card-header {
+          margin-bottom: 16px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        .card-controls {
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .test-result-item {
+          padding: 16px;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .test-type {
+          justify-content: center;
+        }
+
+        .view-details {
+          margin-left: 0;
+          margin-top: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-content {
+          padding: 12px;
+        }
+
+        .dashboard-grid {
+          gap: 16px;
+        }
+
+        .card {
+          padding: 12px;
+        }
+
+        .chart-container {
+          height: 200px;
+        }
+      }
+
+

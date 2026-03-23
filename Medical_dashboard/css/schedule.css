@@ -1,0 +1,388 @@
+@import url("./navbar.css");
+@import url("./sidebar.css");
+@import url("./scrollbar.css");
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Mulish", sans-serif;
+      }
+
+      .container {
+        display: flex;
+        height: calc(100vh - 64px);
+        overflow: hidden;
+      }
+
+      .main-content {
+        flex: 1;
+        overflow-y: auto;
+        background: #f7f7fc;
+        padding: 32px;
+      }
+
+      .main-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .page-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #11142D;
+        margin-bottom: 24px;
+      }
+
+      .schedule-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+        gap: 24px;
+      }
+
+      .doctor-info {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .doctor-avatar-large {
+        width: 56px;
+        height: 56px;
+        background: #E2E2EA;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 18px;
+        color: #333;
+        flex-shrink: 0;
+      }
+
+      .doctor-details h2 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 4px;
+      }
+
+      .doctor-details p {
+        font-size: 13px;
+        color: #999;
+      }
+
+      .schedule-controls {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .date-selector {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .date-dropdown {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border: 1px solid #5541D7;
+        border-radius: 6px;
+        background: white;
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .date-dropdown:hover {
+        background: #f7f7f7;
+      }
+
+      .nav-arrow {
+        width: 36px;
+        height: 36px;
+        border: 1px solid #e8e8e8;
+        background: white;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        color: #999;
+        transition: all 0.2s;
+      }
+
+      .nav-arrow:hover {
+        border-color: #5541D7;
+        color: #5541D7;
+      }
+
+      .view-mode {
+        padding: 8px 12px;
+        border: 1px solid #5541D7;
+        border-radius: 6px;
+        background: white;
+        cursor: pointer;
+        font-size: 14px;
+        color: #5541D7;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+      }
+
+      .view-mode:hover {
+        background: #f7f7f7;
+      }
+
+      .view-mode i {
+        font-size: 12px;
+      }
+
+      .menu-dots {
+        width: 36px;
+        height: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #9A9AB0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.2s;
+        rotate: 90deg;
+      }
+
+      .menu-dots:hover {
+        color: hsl(240, 12%, 45%);
+      }
+
+      .today-info {
+        padding: 16px;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #e8e8e8;
+      }
+
+      .today-label {
+        font-size: 14px;
+        color: #999;
+      }
+
+      .today-date {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        margin-left: 8px;
+      }
+
+      #calendar {
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #e8e8e8;
+        max-height: 700px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-bottom: 25px;
+      }
+
+      .fc {
+        font-family: "Mulish", sans-serif;
+      }
+
+      .fc .fc-col-header-cell {
+        background: white;
+        border-color: #e8e8e8;
+        padding: 12px 4px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .fc .fc-daygrid-day-number {
+        padding: 8px;
+      }
+
+      .fc .fc-timegrid-slot {
+        height: 3em;
+        border-color: #f0f0f0;
+      }
+
+      .fc .fc-timegrid-axis {
+        background: #f7f7f7;
+        border-color: #e8e8e8;
+      }
+
+      .fc .fc-timegrid-axis .fc-daygrid-day-frame {
+        border-color: #e8e8e8;
+      }
+
+      .fc .fc-col-time-text {
+        font-size: 12px;
+        color: #999;
+        font-weight: 500;
+      }
+
+      .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-frame {
+        min-height: 3em;
+      }
+
+      .fc .fc-daygrid-day {
+        border-color: #e8e8e8;
+      }
+
+      .fc .fc-daygrid-day.fc-day-today {
+        background-color: transparent;
+      }
+
+      .fc .fc-event {
+        background-color: #5541D7;
+        border-color: #5541D7;
+        padding: 2px 4px;
+      }
+
+      .fc .fc-event-title {
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .fc .fc-timegrid {
+        border-color: #e8e8e8;
+      }
+
+      .fc .fc-timegrid-body {
+        border-top: 1px solid #e8e8e8;
+      }
+
+      .fc .fc-scrollgrid {
+        border-color: #e8e8e8;
+      }
+
+      .fc .fc-scrollgrid-sync-table {
+        border-color: #e8e8e8;
+      }
+
+      .fc .fc-daygrid-day-frame {
+        border-color: #e8e8e8;
+      }
+
+      .fc .fc-button-primary {
+        background-color: #5541D7;
+        border-color: #5541D7;
+      }
+
+      .fc .fc-button-primary:hover {
+        background-color: #4a35c9;
+      }
+
+      .fc .fc-button-primary.fc-button-active {
+        background-color: #5b42f3;
+      }
+
+      #calendar::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      #calendar::-webkit-scrollbar-track {
+        background: #E2E2EA;
+      }
+
+      #calendar::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #5541D7 0%, #5541D7 100%);
+        border-radius: 2px;
+        min-height: 40px;
+      }
+
+      #calendar::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #4a35c9 0%, #4a35c9 100%);
+      }
+
+      .fc .fc-scroller-harness {
+        overflow-y: auto !important;
+      }
+
+      .fc .fc-scroller {
+        overflow-y: auto !important;
+      }
+
+      .app-btn {
+        display: flex;
+        justify-content: center;
+      }
+
+      .appointments-back {
+        display: block;
+        text-decoration: none;
+        color: white;
+        background-color: #5541D7;
+        width: max-content;
+        padding: .7rem 1.4rem;
+        border-radius: 10000px;
+        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.25);
+        transition: .3s;
+        transform: translateY(-5px);
+      }
+      .appointments-back:active {
+        box-shadow: none;
+        transform: translateY(0px);
+      }
+
+      /* responsive */
+      @media (max-width: 768px) {
+        .main-content {
+          padding: 16px;
+        }
+
+        .schedule-header {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-bottom: 20px;
+        }
+
+        .schedule-controls {
+          width: 100%;
+          flex-wrap: wrap;
+        }
+
+        .date-selector {
+          width: 100%;
+          justify-content: space-between;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .schedule-container {
+          grid-template-columns: 60px 1fr;
+        }
+
+        .time-slot {
+          font-size: 10px;
+        }
+
+        .schedule-hour {
+          min-height: 50px;
+        }
+
+        .current-time-indicator {
+          top: calc(11 * 50px + 25px);
+        }
+        .appointments-back {
+          padding: .4rem .7rem;
+        }
+      }

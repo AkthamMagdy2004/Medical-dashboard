@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctors List</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/doctors-list.css" />
+  </head>
+  <body>
+    <header></header>
+    <main class="main-content">
+      <aside class="sidebar"></aside>
+      <div class="main-inner">
+        <h1>Doctor List</h1>
+
+        <div class="search-row">
+          <div class="search-wrap">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search"
+              autocomplete="off"
+            />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+
+          <div style="position: relative">
+            <button class="filter-btn" id="filterBtn" title="Filter">
+              <i class="fa-solid fa-filter"></i>
+            </button>
+
+            <div class="filter-panel" id="filterPanel">
+              <h3>Specialty</h3>
+              <div class="filter-options" id="specialtyFilters">
+                <span
+                  class="filter-chip"
+                  data-filter="specialty"
+                  data-value="All"
+                  >All</span
+                >
+                <span
+                  class="filter-chip"
+                  data-filter="specialty"
+                  data-value="Dentist"
+                  >Dentist</span
+                >
+                <span
+                  class="filter-chip"
+                  data-filter="specialty"
+                  data-value="Cardiologist"
+                  >Cardiologist</span
+                >
+                <span
+                  class="filter-chip"
+                  data-filter="specialty"
+                  data-value="Neurologist"
+                  >Neurologist</span
+                >
+                <span
+                  class="filter-chip"
+                  data-filter="specialty"
+                  data-value="Pediatrician"
+                  >Pediatrician</span
+                >
+                <span
+                  class="filter-chip"
+                  data-filter="specialty"
+                  data-value="Orthopedic"
+                  >Orthopedic</span
+                >
+                <span
+                  class="filter-chip"
+                  data-filter="specialty"
+                  data-value="Dermatologist"
+                  >Dermatologist</span
+                >
+              </div>
+
+              <hr class="filter-divider" />
+              <h3>Min. Appointments</h3>
+              <div class="filter-range-label">
+                <span>0%</span><span id="rangeVal">0%</span><span>100%</span>
+              </div>
+              <input
+                type="range"
+                class="filter-range"
+                id="apptRange"
+                min="0"
+                max="100"
+                value="0"
+              />
+
+              <div class="filter-actions">
+                <button class="btn-reset" id="resetFilters">Reset</button>
+                <button class="btn-apply" id="applyFilters">Apply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-info" id="resultsInfo"></div>
+
+        <div class="grid" id="doctorGrid"></div>
+      </div>
+    </main>
+    <script type="module" src="./js/doctors-list.js"></script>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/sidebar.js"></script>
+  </body>
+</html>
