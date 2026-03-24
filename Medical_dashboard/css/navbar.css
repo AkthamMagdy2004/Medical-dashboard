@@ -1,174 +1,174 @@
 header {
-        background: #ffffff;
-        border-bottom: 1px solid #e8e8e8;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        padding: 0 24px;
-        gap: 24px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex-shrink: 0;
-      }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
 
-      .logo-icon {
-        width: 32px;
-        height: 32px;
-        background: #E2E2EA;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #11142D;
-        font-weight: bold;
-        font-size: 14px;
-      }
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: #e2e2ea;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #11142d;
+  font-weight: bold;
+  font-size: 14px;
+}
 
-      .logo-text {
-        font-weight: bold;
-        font-size: 16px;
-        color: #11142D;
-      }
+.logo-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #11142d;
+}
 
-      .search-container {
-        flex: 1;
-        max-width: 400px;
-      }
+.search-container {
+  flex: 1;
+  max-width: 400px;
+}
 
-      .search-box {
-        position: relative;
-        display: flex;
-        align-items: center;
-        background: #F6F6F7;
-        border: 1px solid #E1E1E1;
-        border-radius: 6px;
-        padding: 8px 12px;
-      }
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f6f6f7;
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
 
-      .search-box i {
-        color: #9A9AB0;
-        margin-right: 8px;
-        font-size: 14px;
-      }
+.search-box i {
+  color: #9a9ab0;
+  margin-right: 8px;
+  font-size: 14px;
+}
 
-      .search-box input {
-        border: none;
-        outline: none;
-        width: 100%;
-        font-size: 14px;
-        background: transparent;
-        color: #9A9AB0;
-      }
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+  color: #9a9ab0;
+}
 
-      .search-box input::placeholder {
-        color: #9A9AB0;
-      }
+.search-box input::placeholder {
+  color: #9a9ab0;
+}
 
-      .search-box input:focus {
-        outline: none;
-      }
+.search-box input:focus {
+  outline: none;
+}
 
-      .header-right {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        margin-left: auto;
-      }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
 
-      .notification-btn {
-        background: none;
-        border: 1px solid #E1E1E1;
-        cursor: pointer;
-        font-size: 18px;
-        border-radius: 4px;
-        color: #9A9AB0;
-        transition: color 0.2s;
-        padding: 8px;
-      }
+.notification-btn {
+  background: none;
+  border: 1px solid #e1e1e1;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+  color: #9a9ab0;
+  transition: color 0.2s;
+  padding: 8px;
+}
 
-      .notification-btn:hover {
-        color: hsl(240, 12%, 45%);
-      }
+.notification-btn:hover {
+  color: hsl(240, 12%, 45%);
+}
 
-      .profile-section {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding-left: 16px;
-        border-left: 1px solid #E1E1E1;
-      }
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 16px;
+  border-left: 1px solid #e1e1e1;
+}
 
-      .profile-info {
-        text-align: right;
-      }
+.profile-info {
+  text-align: right;
+}
 
-      .profile-name {
-        font-size: 14px;
-        font-weight: bold;
-        color: #11142D;
-      }
+.profile-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #11142d;
+}
 
-      .profile-email {
-        font-size: 12px;
-        color: #9A9AB0;
-      }
+.profile-email {
+  font-size: 12px;
+  color: #9a9ab0;
+}
 
-      .profile-avatar {
-        width: 32px;
-        height: 32px;
-        background: #C4C4C4;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        color: #333;
-        flex-shrink: 0;
-      }
-      /* responsive */
-      @media (max-width: 768px) {
-        header {
-          padding: 0 16px;
-          gap: 12px;
-          height: 56px;
-        }
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  background: #c4c4c4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #333;
+  flex-shrink: 0;
+}
+/* responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 0 16px;
+    gap: 12px;
+    height: 56px;
+  }
 
-        .search-container {
-          max-width: 250px;
-        }
-      }
-      @media (max-width: 480px) {
-        header {
-          flex-direction: column;
-          height: auto;
-          padding: 12px;
-        }
+  .search-container {
+    max-width: 250px;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+  }
 
-        .logo {
-          width: 100%;
-        }
+  .logo {
+    width: 100%;
+  }
 
-        .search-container {
-          width: 100%;
-          max-width: none;
-        }
+  .search-container {
+    width: 100%;
+    max-width: none;
+  }
 
-        .header-right {
-          width: 100%;
-          justify-content: space-between;
-          margin-left: 0;
-          padding: 8px 0;
-        }
-        .profile-section {
-          padding-left: 0;
-          border-left: none;
-        }
-      }
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 0;
+    padding: 8px 0;
+  }
+  .profile-section {
+    padding-left: 0;
+    border-left: none;
+  }
+}

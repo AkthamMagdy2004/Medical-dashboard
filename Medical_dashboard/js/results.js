@@ -1,9 +1,6 @@
 import { initLayout } from "./layout.js";
 initLayout();
 
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const allTestsData = [
     {
@@ -115,9 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getTestsToDisplay() {
-    let tests = showAllTests
-      ? allTestsData
-      : filterTestsByMonth(currentDate);
+    let tests = showAllTests ? allTestsData : filterTestsByMonth(currentDate);
 
     if (searchQuery) {
       tests = tests.filter((test) => {
@@ -246,16 +241,14 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTests();
   });
 
-  document
-    .querySelector(".tests-link")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      showAllTests = true;
-      searchQuery = "";
-      searchInput.value = "";
-      updateMonthDisplay();
-      renderTests();
-    });
+  document.querySelector(".tests-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    showAllTests = true;
+    searchQuery = "";
+    searchInput.value = "";
+    updateMonthDisplay();
+    renderTests();
+  });
 
   updateMonthDisplay();
   renderTests();
